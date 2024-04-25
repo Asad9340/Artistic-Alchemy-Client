@@ -1,9 +1,11 @@
 import Banner from "../../components/Banner/Banner"
+import CraftItems from "../../components/CraftItems/CraftItems"
 
 function Homepage() {
   return (
     <div>
-      <Banner/>
+      <Banner />
+      <CraftItems/>
     </div>
   )
 }
