@@ -6,7 +6,9 @@ function Root() {
   return (
     <div>
       <NavBar />
+      <div className="max-w-5xl mx-auto">
       <Outlet />
+      </div>
       <Footer/>
     </div>
   )

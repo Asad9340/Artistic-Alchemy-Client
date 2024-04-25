@@ -1,7 +1,10 @@
+import Banner from "../../components/Banner/Banner"
 
 function Homepage() {
   return (
-    <div>Homepage</div>
+    <div>
+      <Banner/>
+    </div>
   )
 }
 
