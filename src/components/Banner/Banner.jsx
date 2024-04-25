@@ -29,7 +29,7 @@ function Banner() {
         >
           <SwiperSlide className="relative">
             <img
-              className="h-[350px] md:h-[550px] w-full object-cover  rounded-lg"
+              className="h-[350px] md:h-[600px] w-full object-cover  rounded-lg"
               src="https://www.thesprucecrafts.com/thmb/w-eA3Krt9ibgMa4EWNCR2X2XwYQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/close-up-picture-workspace-of--embroidery-machine-843488278-9128a2c096844857ba45780ac755fdba.jpg"
               alt=""
             />
@@ -45,7 +45,7 @@ function Banner() {
           </SwiperSlide>
           <SwiperSlide className="relative">
             <img
-              className="h-[350px] md:h-[550px] w-full  rounded-lg"
+              className="h-[350px] md:h-[600px] w-full  rounded-lg"
               src="https://www.thelist.com/img/gallery/why-knitting-and-crocheting-are-great-activities-for-your-mental-health/l-intro-1628774167.jpg"
               alt=""
             />
@@ -61,7 +61,7 @@ function Banner() {
           </SwiperSlide>
           <SwiperSlide className="relative">
             <img
-              className="h-[350px] md:h-[550px] w-full  rounded-lg"
+              className="h-[350px] md:h-[600px] w-full  rounded-lg"
               src="https://c02.purpledshub.com/uploads/sites/51/2023/03/the-best-potholder-quilt-patterns-4ee4872.jpg?webp=1&w=1200"
               alt=""
             />
@@ -77,7 +77,7 @@ function Banner() {
           </SwiperSlide>
           <SwiperSlide className="relative">
             <img
-              className="h-[350px] md:h-[550px] w-full  rounded-lg"
+              className="h-[350px] md:h-[600px] w-full  rounded-lg"
               src="https://cdn.shopify.com/s/files/1/0149/8506/8608/files/GujratMotiFan_large.jpg?v=1589189706"
               alt=""
             />
@@ -93,7 +93,7 @@ function Banner() {
           </SwiperSlide>
           <SwiperSlide className="relative">
             <img
-              className="h-[350px] md:h-[550px]  w-full  rounded-lg"
+              className="h-[350px] md:h-[600px]  w-full  rounded-lg"
               src="https://cdn.filestackcontent.com/fSO70894RmGNGpoVOciF"
               alt=""
             />

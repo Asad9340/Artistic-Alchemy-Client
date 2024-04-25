@@ -1,4 +1,5 @@
 import { Button } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 function Item({ user }) {
   console.log(user);
@@ -25,7 +26,9 @@ function Item({ user }) {
         <p>
           <span className="font-semibold"> Price:</span> {price}
         </p>
-        <Button>View Details</Button>
+        <Link to='/details' >
+          <Button>View Details</Button>
+        </Link>
       </div>
     </div>
   );
