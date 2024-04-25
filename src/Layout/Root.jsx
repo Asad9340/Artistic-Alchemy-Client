@@ -1,17 +1,19 @@
 import { Outlet } from "react-router-dom"
 import NavBar from "../Pages/Shared/NavBar/NavBar"
 import Footer from "../Pages/Shared/Footer/Footer"
+import { Toaster } from "react-hot-toast";
 
 function Root() {
   return (
     <div>
       <NavBar />
-      <div className="max-w-5xl mx-auto">
-      <Outlet />
+      <div className="max-w-6xl mx-auto">
+        <Outlet />
       </div>
-      <Footer/>
+      <Footer />
+      <Toaster />
     </div>
-  )
+  );
 }
 
 export default Root
