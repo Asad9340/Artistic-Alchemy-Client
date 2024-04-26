@@ -7,13 +7,14 @@ import {
   Typography,
 } from '@material-tailwind/react';
 
-
 function Details() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   useEffect(() => {
     (async () => {
-      const res = await fetch(`http://localhost:5000/details/${id}`);
+      const res = await fetch(
+        `https://artistic-alchemy-server.vercel.app/details/${id}`
+      );
       const data = await res.json();
       setProduct(data);
     })();
@@ -24,12 +25,13 @@ function Details() {
     subcategory_name,
     item_name,
     description,
+    customization,
     price,
     rating,
     processing_time,
     stock_status,
   } = product;
-console.log(product);
+  console.log(product);
   return (
     <div className="max-w-5xl mx-auto">
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold lg:font-bold text-center my-8 md:my-10 lg:my-12">
@@ -48,7 +50,9 @@ console.log(product);
                 alt="card-image"
                 className="h-full w-full object-cover"
               />
-              <p className='absolute top-8 px-3 py-1 -left-3 rounded-full -rotate-45 bg-gray-700 text-white'>Customizable</p>
+              <p className="absolute top-12 px-3 py-1 -left-2 rounded-full -rotate-45 bg-gray-700 text-white">
+                {customization=='Yes'?'Customizable':'Not Customizable'}
+              </p>
             </div>
           </CardHeader>
           <CardBody>

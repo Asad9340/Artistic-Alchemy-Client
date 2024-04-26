@@ -1,30 +1,25 @@
-import { useEffect, useState } from "react"
-import { Button, Card, Typography } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Button, Card, Typography } from '@material-tailwind/react';
+import { Link } from 'react-router-dom';
+import Loader from '../Spinner/Loader';
 
-const TABLE_HEAD = ["Product Name", "Subcategory Name", "Price", "Rating", ""];
-
-const TABLE_ROWS = [
-  {
-    name: "John Michael",
-    job: "Manager",
-    date: "23/04/18",
-    date2: "23/04/18",
-  }
-];
+const TABLE_HEAD = ['Product Name', 'Subcategory Name', 'Price', 'Rating', ''];
 
 function AllArtCraft() {
   const [allCraft, setAllCraft] = useState([]);
+  const [loading,setLoading] = useState(true);
   useEffect(() => {
     (async () => {
-      const res = await fetch('http://localhost:5000/allArtCraft');
+      const res = await fetch(
+        'https://artistic-alchemy-server.vercel.app/allArtCraft'
+      );
       const data = await res.json();
+      setLoading(false);
       setAllCraft(data);
-    })()
-  },[])
-  console.log(allCraft)
+    })();
+  }, []);
   return (
-    <div className="mt-8 md:mt-12 ">
+    <div className="mt-8 md:mt-12 font-fontPrimary">
       <h2 className="mb-6 md:mb-10 text-3xl md:text-4xl lg:text-5xl font-semibold lg:font-bold text-center">
         All Art & Craft
       </h2>
@@ -40,7 +35,7 @@ function AllArtCraft() {
                   <Typography
                     variant="small"
                     color="blue-gray"
-                    className="font-normal leading-none opacity-70"
+                    className="font-normal leading-none opacity-70  font-fontPrimary"
                   >
                     {head}
                   </Typography>
@@ -49,59 +44,63 @@ function AllArtCraft() {
             </tr>
           </thead>
           <tbody>
-            {allCraft.map(
-              ({ _id, item_name, subcategory_name, price, rating }) => (
-                <tr key={_id} className="even:bg-blue-gray-50/50">
-                  <td className="p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal"
-                    >
-                      {item_name}
-                    </Typography>
-                  </td>
-                  <td className="p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal"
-                    >
-                      {subcategory_name}
-                    </Typography>
-                  </td>
-                  <td className="p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-normal"
-                    >
-                      {price}
-                    </Typography>
-                  </td>
-                  <td className="p-4">
-                    <Typography
-                      as="a"
-                      href="#"
-                      variant="small"
-                      color="blue-gray"
-                      className="font-medium"
-                    >
-                      {rating}
-                    </Typography>
-                  </td>
-                  <td className="p-4">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-medium"
-                    >
-                      <Link to={`/details/${_id}`} >
-                        <Button color="blue">View Details</Button>
-                      </Link>
-                    </Typography>
-                  </td>
-                </tr>
+            {loading ? (
+                <Loader />
+            ) : (
+              allCraft.map(
+                ({ _id, item_name, subcategory_name, price, rating }) => (
+                  <tr key={_id} className="even:bg-blue-gray-50/50">
+                    <td className="p-4">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal  font-fontPrimary"
+                      >
+                        {item_name}
+                      </Typography>
+                    </td>
+                    <td className="p-4">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal  font-fontPrimary"
+                      >
+                        {subcategory_name}
+                      </Typography>
+                    </td>
+                    <td className="p-4">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-normal  font-fontPrimary"
+                      >
+                        {price}
+                      </Typography>
+                    </td>
+                    <td className="p-4">
+                      <Typography
+                        as="a"
+                        href="#"
+                        variant="small"
+                        color="blue-gray"
+                        className="font-medium  font-fontPrimary"
+                      >
+                        {rating}
+                      </Typography>
+                    </td>
+                    <td className="p-4">
+                      <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className="font-medium"
+                      >
+                        <Link to={`/details/${_id}`}>
+                          <Button color="blue">View Details</Button>
+                        </Link>
+                      </Typography>
+                    </td>
+                  </tr>
+                )
               )
             )}
           </tbody>
@@ -111,4 +110,4 @@ function AllArtCraft() {
   );
 }
 
-export default AllArtCraft
+export default AllArtCraft;

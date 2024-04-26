@@ -12,7 +12,7 @@ import 'swiper/css/bundle';
 function Banner() {
   return (
     <>
-      <div className="">
+      <div className="font-fontPrimary">
         <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Autoplay, Scrollbar, A11y]}

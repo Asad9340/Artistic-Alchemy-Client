@@ -39,8 +39,8 @@ function NavBar() {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? 'flex items-center  px-3 py-2 rounded-md duration-300 font-semibold'
-              : 'flex items-center font-display text-black px-3 py-2'
+              ? 'flex items-center  px-3 py-2 bg-orange-700 text-white rounded-md duration-300 font-semibold  font-fontPrimary'
+              : 'flex items-center font-display text-black px-3 py-2 font-fontPrimary'
           }
         >
           Home
@@ -56,8 +56,8 @@ function NavBar() {
           to="/allArtCraft"
           className={({ isActive }) =>
             isActive
-              ? 'flex items-center  px-3 py-2 rounded-md duration-300 font-semibold text-black'
-              : 'flex items-center font-display text-black px-3 py-2'
+              ? 'flex items-center  px-3 py-2 bg-orange-700 text-white rounded-md duration-300 font-semibold  font-fontPrimary'
+              : 'flex items-center font-display text-black px-3 py-2  font-fontPrimary'
           }
         >
           All Art & craft
@@ -73,8 +73,8 @@ function NavBar() {
           to="/addCraft"
           className={({ isActive }) =>
             isActive
-              ? 'flex items-center  px-3 py-2 rounded-md duration-300 font-semibold text-black'
-              : 'flex items-center font-display text-black px-3 py-2'
+              ? 'flex items-center  px-3 py-2 bg-orange-700 text-white rounded-md duration-300 font-semibold  font-fontPrimary'
+              : 'flex items-center font-display text-black px-3 py-2  font-fontPrimary'
           }
         >
           Add Craft
@@ -90,8 +90,8 @@ function NavBar() {
           to="/myArtCraft"
           className={({ isActive }) =>
             isActive
-              ? 'flex items-center  px-3 py-2 rounded-md duration-300 font-semibold text-black'
-              : 'flex items-center font-display text-black px-3 py-2'
+              ? 'flex items-center  px-3 py-2 bg-orange-700 text-white rounded-md duration-300 font-semibold  font-fontPrimary'
+              : 'flex items-center font-display text-black px-3 py-2  font-fontPrimary'
           }
         >
           My Art & Craft
@@ -108,7 +108,7 @@ function NavBar() {
       >
         <div className="flex items-center justify-between text-blue-gray-900">
           <Link to="/">
-            <Typography className="mr-4 cursor-pointer py-1.5 font-semibold lg:font-bold text-xl md:text-2xl text-black">
+            <Typography className="mr-4 cursor-pointer py-1.5 font-semibold lg:font-bold text-xl md:text-2xl text-black font-fontPrimary">
               Artistic<span className="text-red-700">A</span>lchemy
             </Typography>
           </Link>
