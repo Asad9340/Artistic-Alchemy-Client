@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2';
 
-import { useContext } from "react";
-import { AuthContext } from "../../Firebase/AuthProvider";
+import { useContext } from 'react';
+import { AuthContext } from '../../Firebase/AuthProvider';
 
 function AddCraft() {
   const { user } = useContext(AuthContext);
@@ -15,9 +15,23 @@ function AddCraft() {
     const price = form.price.value;
     const rating = form.rating.value;
     const customization = form.customization.value;
+    const processing_time = form.processing_time.value;
+    const stock_status = form.stock_status.value;
     const email = user.email;
     const user_name = user.displayName;
-    const newCraft = { image, item_name, subcategory_name, description, price, rating, customization,email,user_name };
+    const newCraft = {
+      image,
+      item_name,
+      subcategory_name,
+      description,
+      price,
+      rating,
+      customization,
+      email,
+      user_name,
+      processing_time,
+      stock_status,
+    };
     console.log(newCraft);
 
     fetch('http://localhost:5000/addCraft', {
@@ -210,4 +224,4 @@ function AddCraft() {
   );
 }
 
-export default AddCraft
+export default AddCraft;

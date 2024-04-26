@@ -92,8 +92,6 @@ function AllArtCraft() {
                   </td>
                   <td className="p-4">
                     <Typography
-                      as="a"
-                      href="#"
                       variant="small"
                       color="blue-gray"
                       className="font-medium"
