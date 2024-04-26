@@ -6,6 +6,9 @@ import SignIn from '../Pages/SignIn/SignIn';
 import Signup from '../Pages/Signup/Signup';
 import PrivateRoute from './PrivateRoute';
 import Details from '../components/Details/Details';
+import AllArtCraft from '../components/AllArtCraft/AllArtCraft';
+import AddCraft from '../components/AddCraft/AddCraft';
+import MyArtCraft from '../components/MyArtCraft/MyArtCraft';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -28,6 +31,22 @@ const router = createBrowserRouter([
         path: '/details',
         element: <PrivateRoute>
           <Details/>
+        </PrivateRoute>
+      },
+      {
+        path: 'allArtCraft',
+        element:<AllArtCraft/>,
+      },
+      {
+        path: 'addCraft',
+        element: <PrivateRoute>
+          <AddCraft/>
+        </PrivateRoute>
+      },
+      {
+        path: 'myArtCraft',
+        element: <PrivateRoute>
+          <MyArtCraft/>
         </PrivateRoute>
       },
     ]

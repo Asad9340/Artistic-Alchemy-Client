@@ -40,7 +40,7 @@ function NavBar() {
           className={({ isActive }) =>
             isActive
               ? 'flex items-center  px-3 py-2 rounded-md duration-300 font-semibold'
-              : 'flex items-center font-display text-white px-3 py-2'
+              : 'flex items-center font-display text-black px-3 py-2'
           }
         >
           Home
@@ -53,14 +53,48 @@ function NavBar() {
         className="p-1 font-normal"
       >
         <NavLink
-          to="/updateprofile"
+          to="/allArtCraft"
           className={({ isActive }) =>
             isActive
               ? 'flex items-center  px-3 py-2 rounded-md duration-300 font-semibold text-black'
               : 'flex items-center font-display text-black px-3 py-2'
           }
         >
-          Update Profile
+          All Art & craft
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <NavLink
+          to="/addCraft"
+          className={({ isActive }) =>
+            isActive
+              ? 'flex items-center  px-3 py-2 rounded-md duration-300 font-semibold text-black'
+              : 'flex items-center font-display text-black px-3 py-2'
+          }
+        >
+          Add Craft
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <NavLink
+          to="/myArtCraft"
+          className={({ isActive }) =>
+            isActive
+              ? 'flex items-center  px-3 py-2 rounded-md duration-300 font-semibold text-black'
+              : 'flex items-center font-display text-black px-3 py-2'
+          }
+        >
+          My Art & Craft
         </NavLink>
       </Typography>
     </ul>

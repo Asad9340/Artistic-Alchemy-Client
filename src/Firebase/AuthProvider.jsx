@@ -6,7 +6,6 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
-  updateProfile,
 } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
@@ -48,14 +47,6 @@ function AuthProvider({ children }) {
     });
   };
 
-  //update profile
-  const updateUserProfile = (name, profile) => {
-    return updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: profile,
-    });
-  };
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser);
@@ -73,7 +64,6 @@ function AuthProvider({ children }) {
     createUser,
     loginUser,
     logOut,
-    updateUserProfile,
     loading,
   };
   return (
