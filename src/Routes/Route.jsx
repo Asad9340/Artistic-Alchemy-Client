@@ -34,17 +34,17 @@ const router = createBrowserRouter([
         </PrivateRoute>
       },
       {
-        path: 'allArtCraft',
+        path: '/allArtCraft',
         element:<AllArtCraft/>,
       },
       {
-        path: 'addCraft',
+        path: '/addCraft',
         element: <PrivateRoute>
           <AddCraft/>
         </PrivateRoute>
       },
       {
-        path: 'myArtCraft',
+        path: '/myArtCraft',
         element: <PrivateRoute>
           <MyArtCraft/>
         </PrivateRoute>

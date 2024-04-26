@@ -6,7 +6,7 @@ import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid';
 import { AuthContext } from '../../Firebase/AuthProvider';
 function Signup() {
   const [error, setError] = useState('');
-  const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => setPasswordShown(cur => !cur);
   const navigate = useNavigate();
@@ -14,8 +14,6 @@ function Signup() {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const name = e.target.name.value;
-    const profile = e.target.photoURL.value;
     setError('');
     if (password.length < 6) {
       setError('Password must be at least 6 characters');
@@ -31,13 +29,9 @@ function Signup() {
     }
     createUser(email, password)
       .then(result => {
-        updateUserProfile(name, profile)
-          .then(() => {
-            setUser(result.user);
-            toast.success('Successfully Created Account!');
-            navigate('/');
-          })
-          .catch(err => console.log(err));
+        console.log(result.user);
+        toast.success('Successfully Created Account!');
+        navigate('/');
       })
       .catch(error => console.log(error.message));
   };
