@@ -1,5 +1,9 @@
 import { Button } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
+import { FaStarHalfAlt } from 'react-icons/fa';
+import { TbCoinTakaFilled } from 'react-icons/tb';
+import { FaStar } from 'react-icons/fa';
+
 function Item({ craft, handleDelete }) {
   const { _id, image, item_name, subcategory_name, rating, price } = craft;
 
@@ -22,11 +26,18 @@ function Item({ craft, handleDelete }) {
         <p>
           <span className="font-semibold">Product Name:</span> {item_name}
         </p>
-        <p>
-          <span className="font-semibold">Rating:</span> {rating}
+        <p className="flex items-center gap-1">
+          <span className="font-semibold">Rating:</span>
+          <FaStar className="text-yellow-900" />{' '}
+          <FaStar className="text-yellow-900" />{' '}
+          <FaStar className="text-yellow-900" />{' '}
+          <FaStar className="text-yellow-900" />{' '}
+          <FaStarHalfAlt className="text-yellow-900" />
+          {rating}
         </p>
-        <p>
-          <span className="font-semibold"> Price:</span> {price}
+        <p className="flex gap-1 items-center mb-2">
+          <span className="font-semibold"> Price:</span> <TbCoinTakaFilled />{' '}
+          {price} taka
         </p>
         <div className="flex gap-4 flex-col lg:flex-row">
           <Link to={`/update/${_id}`} className="w-full">

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button, Card, Typography } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
 import Loader from '../Spinner/Loader';
+import { TbCoinTakaFilled } from 'react-icons/tb';
 
 const TABLE_HEAD = ['Product Name', 'Subcategory Name', 'Price', 'Rating', ''];
 
@@ -72,9 +73,9 @@ function AllArtCraft() {
                       <Typography
                         variant="small"
                         color="blue-gray"
-                        className="font-normal  font-fontPrimary"
+                        className="font-normal flex items-center gap-1  font-fontPrimary"
                       >
-                        {price}
+                        <TbCoinTakaFilled /> {price} taka
                       </Typography>
                     </td>
                     <td className="p-4">

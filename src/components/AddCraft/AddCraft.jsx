@@ -101,7 +101,7 @@ function AddCraft() {
           <div className="w-full lg:w-6/12 px-4">
             <div className="relative w-full mb-3">
               <label
-                className="  block  text-blueGray-600 text-xs font-bold mb-2"
+                className="block text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
                 Subcategory Name
@@ -111,14 +111,12 @@ function AddCraft() {
                 name="subcategory_name"
                 id=""
               >
-                <option value="embroidery">
-                  Embroidery
-                </option>
-                <option value="knitting">Knitting & Crocheting</option>
-                <option value="quilting">Quilting</option>
-                <option value="beadwork">Beadwork</option>
-                <option value="dyeing">Tie-Dyeing</option>
-                <option value="macrame">Macrame</option>
+                <option value="Embroidery">Embroidery</option>
+                <option value="Knitting & Crocheting">Knitting & Crocheting</option>
+                <option value="Quilting">Quilting</option>
+                <option value="Beadwork">Beadwork</option>
+                <option value="Tie-Dyeing">Tie-Dyeing</option>
+                <option value="Macrame">Macrame</option>
               </select>
             </div>
           </div>
@@ -148,7 +146,7 @@ function AddCraft() {
                 Price
               </label>
               <input
-                type='number'
+                type="number"
                 name="price"
                 required
                 placeholder="Enter Price"
@@ -181,13 +179,14 @@ function AddCraft() {
               >
                 Customization
               </label>
-              <input
-                type="text"
-                name="customization"
-                required
-                placeholder="Customization like Yes or No"
+              <select
                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
+                name="customization"
+                id=""
+              >
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
@@ -215,13 +214,14 @@ function AddCraft() {
               >
                 Stock Status
               </label>
-              <input
-                type="text"
-                required
-                name="stock_status"
-                placeholder="Enter Stock Status"
+              <select
                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
+                name="stock_status"
+                id=""
+              >
+                <option value="In Stock">In stock</option>
+                <option value="made To Order">Made to Order</option>
+              </select>
             </div>
           </div>
           <div className="w-full px-4">

@@ -1,4 +1,5 @@
 import { FaStarHalfAlt } from 'react-icons/fa';
+import { TbCoinTakaFilled } from 'react-icons/tb';
 import { FaStar } from 'react-icons/fa';
 function CraftItem({ craft }) {
   const {
@@ -26,7 +27,9 @@ function CraftItem({ craft }) {
             {customization == 'Yes' ? 'Customizable' : 'Not Customizable'}
           </p>
         </div>
-        <p className='bg-gray-800 text-white text-center rounded-b-md'>{stock_status}</p>
+        <p className="bg-gray-800 text-white text-center rounded-b-md">
+          {stock_status}
+        </p>
       </div>
       <div className="p-3 flex flex-col justify-center space-y-2">
         <h2 className="text-lg font-semibold">
@@ -48,11 +51,13 @@ function CraftItem({ craft }) {
           <FaStarHalfAlt className="text-yellow-900" />
           {rating}
         </p>
-        <p>
-          <span className="font-semibold"> Price:</span> {price}
+        <p className="flex gap-1 items-center">
+          <span className="font-semibold"> Price:</span> <TbCoinTakaFilled />{' '}
+          {price} taka
         </p>
         <p>
-          <span className="font-semibold"> Processing Time:</span> {processing_time}
+          <span className="font-semibold"> Processing Time:</span>{' '}
+          {processing_time}
         </p>
       </div>
     </div>
