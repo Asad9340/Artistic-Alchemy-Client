@@ -53,11 +53,21 @@ function MyArtCraft() {
 
   const handleChange = event => {
     setSelectedOption(event.target.value);
-    if (event.target.value === 'price') {
+    if (event.target.value === 'customization') {
+      const sortCustomization = myCrafts.sort((a, b) => {
+        if (a.customization < b.customization) {
+          return 1;
+        }
+        if (a.customization > b.customization) {
+          return -1;
+        }
+        return 0;
+      });
+      setMyCrafts(sortCustomization);
+    } else if (event.target.value === 'price') {
       const sortPrice = myCrafts.sort((a, b) => a.price - b.price);
       setMyCrafts(sortPrice);
-    }
-    if (event.target.value === 'rating') {
+    } else if (event.target.value === 'rating') {
       const sortRating = myCrafts.sort((a, b) => b.rating - a.rating);
       setMyCrafts(sortRating);
     }
@@ -84,6 +94,7 @@ function MyArtCraft() {
             id=""
           >
             <option value="">Select an option</option>
+            <option value="customization">Customization</option>
             <option value="rating">Rating</option>
             <option value="price">Price</option>
           </select>

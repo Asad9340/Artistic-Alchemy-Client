@@ -5,7 +5,7 @@ import { TbCoinTakaFilled } from 'react-icons/tb';
 import { FaStar } from 'react-icons/fa';
 
 function Item({ craft, handleDelete }) {
-  const { _id, image, item_name, subcategory_name, rating, price } = craft;
+  const { _id, image, item_name, subcategory_name,customization, rating, price } = craft;
 
   return (
     <div className="flex flex-col md:grid gap-3 md:grid-cols-7 shadow-lg rounded-md px-3 py-5">
@@ -25,6 +25,9 @@ function Item({ craft, handleDelete }) {
         <hr className="border border-black" />
         <p>
           <span className="font-semibold">Product Name:</span> {item_name}
+        </p>
+        <p>
+          <span className="font-semibold">Customization:</span> {customization}
         </p>
         <p className="flex items-center gap-1">
           <span className="font-semibold">Rating:</span>

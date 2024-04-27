@@ -24,7 +24,7 @@ function AllArtCraft() {
       <h2 className="mb-6 md:mb-10 text-3xl md:text-4xl lg:text-5xl font-semibold lg:font-bold text-center">
         All Art & Craft
       </h2>
-      <Card className="h-full w-full ">
+      <Card className="h-full w-full overflow-scroll lg:overflow-hidden">
         <table className="w-full min-w-max table-auto text-left">
           <thead>
             <tr>
