@@ -28,6 +28,7 @@ export function SignIn() {
   const handleGithubLogin = () => {
     githubLogin()
       .then(result => {
+        console.log(result.user);
         toast.success('SignIn with Github Successfully');
         setUser(result.user);
         navigate(from);

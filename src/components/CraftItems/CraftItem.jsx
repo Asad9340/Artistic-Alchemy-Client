@@ -1,8 +1,11 @@
 import { FaStarHalfAlt } from 'react-icons/fa';
 import { TbCoinTakaFilled } from 'react-icons/tb';
 import { FaStar } from 'react-icons/fa';
+import { Button } from '@material-tailwind/react';
+import { Link } from 'react-router-dom';
 function CraftItem({ craft }) {
   const {
+    _id,
     image,
     item_name,
     subcategory_name,
@@ -59,6 +62,11 @@ function CraftItem({ craft }) {
           <span className="font-semibold"> Processing Time:</span>{' '}
           {processing_time}
         </p>
+        <Link className="w-full" to={`/details/${_id}`}>
+          <Button className="w-full" color="green">
+            View Details
+          </Button>
+        </Link>
       </div>
     </div>
   );
