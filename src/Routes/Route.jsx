@@ -10,6 +10,7 @@ import AddCraft from '../components/AddCraft/AddCraft';
 import MyArtCraft from '../components/MyArtCraft/MyArtCraft';
 import Error from './../Pages/Error/Error';
 import Update from '../components/Update/Update';
+import Subcategory from '../components/Subcategory/Subcategory';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Signup />,
+      },
+      {
+        path: '/subcategory/:subcategory',
+        element:<Subcategory/>
       },
       {
         path: '/details/:id',

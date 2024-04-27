@@ -10,7 +10,6 @@ function CraftItems() {
       );
       const data = await res.json();
       const filterData = data.filter((item, index) => index < 6);
-      console.log(filterData);
       setCrafts(filterData);
     })();
   }, []);
