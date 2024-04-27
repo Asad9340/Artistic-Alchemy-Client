@@ -101,7 +101,7 @@ function NavBar() {
   );
 
   return (
-    <div>
+    <div className='bg-gray-900'>
       <Navbar
         style={{ borderWidth: 0 }}
         className="sticky top-0 z-10 h-max max-w-full  px-4 py-2 lg:px-8 lg:py-4 shadow-none rounded-t-md rounded-b-none "
@@ -226,12 +226,12 @@ function NavBar() {
             </div>
           ) : (
             <div className="flex items-center gap-4">
-              <Link className="w-full" to="/login">
+              <Link className="w-full" to="/signin">
                 <Button fullWidth variant="filled" size="sm" className="">
                   <span>Log In</span>
                 </Button>
               </Link>
-              <Link className="w-full" to="/register">
+              <Link className="w-full" to="/signup">
                 <Button fullWidth variant="filled" size="sm" className="">
                   <span>Sign Up</span>
                 </Button>

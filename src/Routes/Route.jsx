@@ -9,6 +9,7 @@ import AllArtCraft from '../components/AllArtCraft/AllArtCraft';
 import AddCraft from '../components/AddCraft/AddCraft';
 import MyArtCraft from '../components/MyArtCraft/MyArtCraft';
 import Error from './../Pages/Error/Error';
+import Update from '../components/Update/Update';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -54,6 +55,16 @@ const router = createBrowserRouter([
             <MyArtCraft />
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/update/:id',
+        element: (
+          <PrivateRoute>
+            <Update />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://artistic-alchemy-server.vercel.app/update/${params.id}`),
       },
     ],
   },

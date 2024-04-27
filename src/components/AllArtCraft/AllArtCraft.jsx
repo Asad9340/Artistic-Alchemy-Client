@@ -7,7 +7,7 @@ const TABLE_HEAD = ['Product Name', 'Subcategory Name', 'Price', 'Rating', ''];
 
 function AllArtCraft() {
   const [allCraft, setAllCraft] = useState([]);
-  const [loading,setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     (async () => {
       const res = await fetch(
@@ -45,7 +45,7 @@ function AllArtCraft() {
           </thead>
           <tbody>
             {loading ? (
-                <Loader />
+              <Loader />
             ) : (
               allCraft.map(
                 ({ _id, item_name, subcategory_name, price, rating }) => (

@@ -1,13 +1,17 @@
 import { Button } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
+function Item({ craft, handleDelete }) {
+  const { _id, image, item_name, subcategory_name, rating, price } = craft;
 
-function Item({ craft }) {
-  const { image, item_name, subcategory_name, rating, price } = craft;
   return (
-    <div className="grid gap-3 grid-cols-7 shadow-lg rounded-md px-3 py-5">
+    <div className="flex flex-col md:grid gap-3 md:grid-cols-7 shadow-lg rounded-md px-3 py-5">
       <div className="col-span-4">
         <div className="flex items-center justify-center ">
-          <img src={image} className="h-[350px] w-[350px] rounded-md" alt="" />
+          <img
+            src={image}
+            className="h-[300px] md:h-[350px] w-full md:w-[350px] rounded-md"
+            alt=""
+          />
         </div>
       </div>
       <div className="col-span-3 p-3 flex flex-col justify-center space-y-2">
@@ -24,12 +28,20 @@ function Item({ craft }) {
         <p>
           <span className="font-semibold"> Price:</span> {price}
         </p>
-        <Link to="/details/">
-          <div className='flex gap-4'>
-            <Button color="green">Update</Button>
-            <Button color="red">Delete</Button>
-          </div>
-        </Link>
+        <div className="flex gap-4 flex-col lg:flex-row">
+          <Link to={`/update/${_id}`} className="w-full">
+            <Button className="w-full" color="green">
+              Update
+            </Button>
+          </Link>
+          <Button
+            className="w-full"
+            onClick={() => handleDelete(_id)}
+            color="red"
+          >
+            Delete
+          </Button>
+        </div>
       </div>
     </div>
   );
