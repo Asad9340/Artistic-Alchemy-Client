@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CraftItem from '../CraftItems/CraftItem';
-import Loader from '../Spinner/Loader';
 
 function Subcategory() {
   const [subcategoryCollection, setSubcategoryCollection] = useState([]);
@@ -21,8 +20,8 @@ function Subcategory() {
         Subcategory : {subcategory}
       </h2>
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {!subcategoryCollection ? (
-          <Loader />
+        {subcategoryCollection.length == 0 ? (
+          <p className="text-2xl md:text-3xl font-semibold text-center">Please add some craft items ...</p>
         ) : (
           subcategoryCollection?.map(craft => (
             <CraftItem key={craft._id} craft={craft} />
