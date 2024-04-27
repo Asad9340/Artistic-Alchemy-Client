@@ -14,7 +14,7 @@ function CraftItem({ craft }) {
   } = craft;
 
   return (
-    <div className="flex flex-col gap-2 md:gap-3  shadow-lg rounded-md px-3 py-3">
+    <div className="flex flex-col gap-2 md:gap-3  shadow-lg rounded-md px-3 py-3 font-fontPrimary">
       <div>
         <div className="relative">
           <img

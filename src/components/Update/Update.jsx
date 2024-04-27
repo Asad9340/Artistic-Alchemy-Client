@@ -154,7 +154,7 @@ function Update() {
                 Price
               </label>
               <input
-                type="text"
+                type="number"
                 name="price"
                 defaultValue={price}
                 required
@@ -172,7 +172,7 @@ function Update() {
                 Rating
               </label>
               <input
-                type="text"
+                type="number"
                 defaultValue={rating}
                 name="rating"
                 required

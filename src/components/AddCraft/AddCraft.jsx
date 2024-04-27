@@ -148,7 +148,7 @@ function AddCraft() {
                 Price
               </label>
               <input
-                type="text"
+                type='number'
                 name="price"
                 required
                 placeholder="Enter Price"
@@ -165,7 +165,7 @@ function AddCraft() {
                 Rating
               </label>
               <input
-                type="text"
+                type="number"
                 name="rating"
                 required
                 placeholder="Enter Rating"

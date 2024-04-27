@@ -8,7 +8,8 @@ function MyArtCraft() {
   const { user } = useContext(AuthContext);
   const [myCrafts, setMyCrafts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [control,setControl] = useState(false);
+  const [control, setControl] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('');
   useEffect(() => {
     (async () => {
       const res = await fetch(
@@ -50,11 +51,44 @@ function MyArtCraft() {
     });
   };
 
+  const handleChange = event => {
+    setSelectedOption(event.target.value);
+    if (event.target.value === 'price') {
+      const sortPrice = myCrafts.sort((a, b) => a.price - b.price);
+      setMyCrafts(sortPrice);
+    }
+    if (event.target.value === 'rating') {
+      const sortRating = myCrafts.sort((a, b) => b.rating - a.rating);
+      setMyCrafts(sortRating);
+    }
+  };
+
   return (
     <div className="mt-6 md:mt-10 lg:mt-12 font-fontPrimary">
       <h2 className="text-3xl md:text-4xl lg:text-5xl text-center font-semibold md:font-bold lg:font-extrabold ">
         My Art & Crafts
       </h2>
+      <div>
+        <div className="relative w-full mb-3">
+          <label
+            className="  block  text-blueGray-600 text-lg font-bold mb-2"
+            htmlFor="grid-password"
+          >
+            Sort By
+          </label>
+          <select
+            value={selectedOption}
+            onChange={handleChange}
+            className="border px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+            name="subcategory_name"
+            id=""
+          >
+            <option value="">Select an option</option>
+            <option value="rating">Rating</option>
+            <option value="price">Price</option>
+          </select>
+        </div>
+      </div>
       <div className="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-2 mt-8">
         {!loading ? (
           myCrafts.map(craft => (
