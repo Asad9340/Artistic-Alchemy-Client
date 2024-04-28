@@ -2,7 +2,21 @@ import { Button } from "@material-tailwind/react"
 import { FaHandHoldingDollar } from 'react-icons/fa6';
 import { BiSupport } from "react-icons/bi";
 import { AiFillLike } from 'react-icons/ai';
+import { useTypewriter } from 'react-simple-typewriter';
 function SupportService() {
+
+    const [text] = useTypewriter({
+    words: ['P', 'Pr', 'Pri', 'Pric' ,'Prici','Pricin' ,'Pricing'],
+    loop: 0
+  })
+    const [text2] = useTypewriter({
+    words: ['Q', 'Qu', 'Qua', 'Qual' ,'Quali','Qualit' ,'Quality'],
+    loop: 0
+  })
+    const [text3] = useTypewriter({
+    words: ['S', 'Su', 'Sup', 'Supp' ,'Suppo','Suppor' ,'Support'],
+    loop: 0
+  })
   return (
     <div className="mt-8 md:mt-12 lg:mt-16 font-fontPrimary">
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold lg:font-bold text-center">
@@ -16,7 +30,7 @@ function SupportService() {
             </div>
           </div>
           <h2 className="text-lg lg:text-2xl font-bold text-center">
-            Affordable Pricing
+            Affordable <span>{text}</span>
           </h2>
           <p className="text-center">
             Affordable pricing levels the playing field, empowering all to
@@ -35,7 +49,7 @@ function SupportService() {
             </div>
           </div>
           <h2 className="text-lg lg:text-2xl font-bold text-center">
-            Top Quality
+            Top <span>{text2}</span>
           </h2>
           <p className="text-center">
             Top quality sets the standard, delivering excellence that exceeds
@@ -54,7 +68,7 @@ function SupportService() {
             </div>
           </div>
           <h2 className="text-lg lg:text-2xl font-bold text-center">
-            24/7 Support
+            24/7{' '} <span>{text}</span>
           </h2>
           <p className="text-center">
             24/7 support ensures peace of mind, offering assistance whenever it

@@ -5,7 +5,6 @@ import { TbCoinTakaFilled } from 'react-icons/tb';
 import { FaStar } from 'react-icons/fa';
 
 function Item({ craft, handleDelete }) {
-  console.log(craft);
   const {
     _id,
     image,
@@ -24,7 +23,7 @@ function Item({ craft, handleDelete }) {
         <div>
           <img
             src={image}
-            className="h-[300px] md:h-[300px] w-full md:w-[350px] rounded-md"
+            className="h-[250px] md:h-[250px] w-full md:w-[250px] rounded-md"
             alt=""
           />
         </div>

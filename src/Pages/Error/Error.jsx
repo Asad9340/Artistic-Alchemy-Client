@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 function Error() {
     return (
       <>
-        <section className="relative z-10  bg-blue-500 h-screen flex items-center justify-center">
+        <section className="relative z-10  bg-blue-500 h-screen flex items-center justify-center font-fontPrimary">
           <div className="container mx-auto">
             <div className="-mx-4 flex">
               <div className="w-full px-4">
@@ -19,7 +19,7 @@ function Error() {
                   </p>
                   <NavLink
                     to="/"
-                    className="inline-block rounded-lg border border-white px-8 py-3 text-center text-base font-semibold text-white transition hover:bg-white hover:text-primary"
+                    className="inline-block rounded-lg border border-white px-8 py-3 text-center text-base font-semibold text-white hover:text-gray-800 transition hover:bg-white hover:text-primary"
                   >
                     Go To Home
                   </NavLink>
