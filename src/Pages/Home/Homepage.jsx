@@ -9,11 +9,11 @@ function Homepage() {
     <div>
       <Banner />
       <CraftItems />
-      <Categories/>
+      <Categories />
       <SupportService />
-      <Testimonials/>
+      <Testimonials />
     </div>
-  )
+  );
 }
 
 export default Homepage

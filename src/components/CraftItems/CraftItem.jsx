@@ -3,6 +3,7 @@ import { TbCoinTakaFilled } from 'react-icons/tb';
 import { FaStar } from 'react-icons/fa';
 import { Button } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
+import { Fade } from 'react-awesome-reveal';
 function CraftItem({ craft }) {
   const {
     _id,
@@ -34,42 +35,44 @@ function CraftItem({ craft }) {
           {stock_status}
         </p>
       </div>
-      <div className="p-3 flex flex-col  space-y-2">
-        <h2 className="text-lg font-semibold">
-          SubCategory Name: {subcategory_name}
-        </h2>{' '}
-        <hr className="border border-black" />
-        <p>
-          <span className="font-semibold">Product Name:</span> {item_name}
-        </p>
-        <p>
-          <span className="font-semibold">Description:</span> {description}
-        </p>
-        <p className="flex items-center gap-1">
-          <span className="font-semibold">Rating:</span>{' '}
-          <FaStar className="text-yellow-900" />{' '}
-          <FaStar className="text-yellow-900" />{' '}
-          <FaStar className="text-yellow-900" />{' '}
-          <FaStar className="text-yellow-900" />{' '}
-          <FaStarHalfAlt className="text-yellow-900" />
-          {rating}
-        </p>
-        <p className="flex gap-1 items-center">
-          <span className="font-semibold"> Price:</span> <TbCoinTakaFilled />{' '}
-          {price} taka
-        </p>
-        <p>
-          <span className="font-semibold"> Processing Time:</span>{' '}
-          {processing_time}
-        </p>
-        <div className='w-full'>
-          <Link className="w-full" to={`/details/${_id}`}>
-            <Button className="w-full" color="green">
-              View Details
-            </Button>
-          </Link>
+      <Fade delay={300}>
+        <div className="p-3 flex flex-col  space-y-2">
+          <h2 className="text-lg font-semibold">
+            SubCategory Name: {subcategory_name}
+          </h2>{' '}
+          <hr className="border border-black" />
+          <p>
+            <span className="font-semibold">Product Name:</span> {item_name}
+          </p>
+          <p>
+            <span className="font-semibold">Description:</span> {description}
+          </p>
+          <p className="flex items-center gap-1">
+            <span className="font-semibold">Rating:</span>{' '}
+            <FaStar className="text-yellow-900" />{' '}
+            <FaStar className="text-yellow-900" />{' '}
+            <FaStar className="text-yellow-900" />{' '}
+            <FaStar className="text-yellow-900" />{' '}
+            <FaStarHalfAlt className="text-yellow-900" />
+            {rating}
+          </p>
+          <p className="flex gap-1 items-center">
+            <span className="font-semibold"> Price:</span> <TbCoinTakaFilled />{' '}
+            {price} taka
+          </p>
+          <p>
+            <span className="font-semibold"> Processing Time:</span>{' '}
+            {processing_time}
+          </p>
+          <div className="w-full">
+            <Link className="w-full" to={`/details/${_id}`}>
+              <Button className="w-full" color="green">
+                View Details
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </Fade>
     </div>
   );
 }
