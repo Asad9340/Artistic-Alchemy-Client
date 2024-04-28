@@ -9,8 +9,6 @@ function Footer() {
               href="#"
               className="flex justify-center space-x-3 lg:justify-start"
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
-              </div>
               <span className="self-center text-2xl font-semibold">
                 ArtisticAlchemy
               </span>
@@ -18,20 +16,10 @@ function Footer() {
           </div>
           <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
             <div className="space-y-3">
-              <h3 className="tracking-wide uppercase dark:text-gray-900">
+              <h3 className="tracking-wide uppercase dark:text-gray-900 font-semibold">
                 Product
               </h3>
               <ul className="space-y-1">
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Integrations
-                  </a>
-                </li>
                 <li>
                   <a rel="noopener noreferrer" href="#">
                     Pricing
@@ -45,7 +33,7 @@ function Footer() {
               </ul>
             </div>
             <div className="space-y-3">
-              <h3 className="tracking-wide uppercase dark:text-gray-900">
+              <h3 className="tracking-wide uppercase dark:text-gray-900 font-semibold">
                 Company
               </h3>
               <ul className="space-y-1">
@@ -62,16 +50,11 @@ function Footer() {
               </ul>
             </div>
             <div className="space-y-3">
-              <h3 className="uppercase dark:text-gray-900">Developers</h3>
+              <h3 className="uppercase dark:text-gray-900 font-semibold">Developers</h3>
               <ul className="space-y-1">
                 <li>
                   <a rel="noopener noreferrer" href="#">
                     Public API
-                  </a>
-                </li>
-                <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Documentation
                   </a>
                 </li>
                 <li>
@@ -82,7 +65,7 @@ function Footer() {
               </ul>
             </div>
             <div className="space-y-3">
-              <div className="uppercase dark:text-gray-900">Social media</div>
+              <div className="uppercase dark:text-gray-900 font-semibold">Social media</div>
               <div className="flex justify-start space-x-3">
                 <a
                   rel="noopener noreferrer"

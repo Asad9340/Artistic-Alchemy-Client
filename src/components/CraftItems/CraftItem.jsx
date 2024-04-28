@@ -34,7 +34,7 @@ function CraftItem({ craft }) {
           {stock_status}
         </p>
       </div>
-      <div className="p-3 flex flex-col items-center  space-y-2">
+      <div className="p-3 flex flex-col  space-y-2">
         <h2 className="text-lg font-semibold">
           SubCategory Name: {subcategory_name}
         </h2>{' '}
