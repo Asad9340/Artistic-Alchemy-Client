@@ -74,11 +74,11 @@ function MyArtCraft() {
   };
 
   const handleYesFilter = () => {
-    const yesFilter = myCrafts.filter(craft => craft.customization === 'Yes');
+    const yesFilter = myCrafts.find(craft => craft.customization === 'Yes');
     setMyCrafts(yesFilter);
   };
   const handleNoFilter = () => {
-    const noFilter = myCrafts.filter(craft => craft.customization === 'No');
+    const noFilter = myCrafts.find(craft => craft.customization === 'No');
     setMyCrafts(noFilter);
   };
 
