@@ -5,20 +5,34 @@ import { TbCoinTakaFilled } from 'react-icons/tb';
 import { FaStar } from 'react-icons/fa';
 
 function Item({ craft, handleDelete }) {
-  const { _id, image, item_name, subcategory_name,customization, rating, price } = craft;
+  console.log(craft);
+  const {
+    _id,
+    image,
+    item_name,
+    subcategory_name,
+    customization,
+    processing_time,
+    rating,
+    price,
+    stock_status,
+  } = craft;
 
   return (
     <div className="flex flex-col md:grid gap-3 md:grid-cols-7 shadow-lg rounded-md px-3 py-5">
-      <div className="col-span-4">
-        <div className="flex items-center justify-center ">
+      <div className="col-span-3 flex flex-col items-center justify-center">
+        <div>
           <img
             src={image}
-            className="h-[300px] md:h-[350px] w-full md:w-[350px] rounded-md"
+            className="h-[300px] md:h-[300px] w-full md:w-[350px] rounded-md"
             alt=""
           />
         </div>
+        <p className="mt-6 text-center px-6 py-1 bg-orange-700 text-white rounded-full font-semibold">
+          {stock_status}
+        </p>
       </div>
-      <div className="col-span-3 p-3 flex flex-col justify-center space-y-2">
+      <div className="col-span-4 p-3 flex flex-col justify-center space-y-2">
         <h2 className="text-lg font-semibold">
           SubCategory Name: {subcategory_name}
         </h2>{' '}
@@ -39,8 +53,12 @@ function Item({ craft, handleDelete }) {
           {rating}
         </p>
         <p className="flex gap-1 items-center mb-2">
-          <span className="font-semibold"> Price:</span> <TbCoinTakaFilled />{' '}
+          <span className="font-semibold"> Price: </span> <TbCoinTakaFilled />{' '}
           {price} taka
+        </p>
+        <p className="mb-2">
+          <span className="font-semibold"> Processing Time: </span>
+          {processing_time}
         </p>
         <div className="flex gap-4 flex-col lg:flex-row">
           <Link to={`/update/${_id}`} className="w-full">

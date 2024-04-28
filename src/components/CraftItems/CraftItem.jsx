@@ -18,7 +18,7 @@ function CraftItem({ craft }) {
   } = craft;
 
   return (
-    <div className="flex flex-col gap-2 md:gap-3  shadow-lg rounded-md px-3 py-3 font-fontPrimary">
+    <div className="flex flex-col justify-between gap-2 md:gap-3  shadow-lg rounded-md px-3 py-3 font-fontPrimary">
       <div>
         <div className="relative">
           <img
@@ -34,7 +34,7 @@ function CraftItem({ craft }) {
           {stock_status}
         </p>
       </div>
-      <div className="p-3 flex flex-col justify-center space-y-2">
+      <div className="p-3 flex flex-col items-center  space-y-2">
         <h2 className="text-lg font-semibold">
           SubCategory Name: {subcategory_name}
         </h2>{' '}
@@ -62,11 +62,13 @@ function CraftItem({ craft }) {
           <span className="font-semibold"> Processing Time:</span>{' '}
           {processing_time}
         </p>
-        <Link className="w-full" to={`/details/${_id}`}>
-          <Button className="w-full" color="green">
-            View Details
-          </Button>
-        </Link>
+        <div className='w-full'>
+          <Link className="w-full" to={`/details/${_id}`}>
+            <Button className="w-full" color="green">
+              View Details
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

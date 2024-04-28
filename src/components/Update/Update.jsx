@@ -1,7 +1,8 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 function Update() {
+  const navigate = useNavigate();
   const product = useLoaderData();
   const {
     _id,
@@ -49,6 +50,7 @@ function Update() {
       .then(data => {
         console.log(data);
         if (data.modifiedCount > 0) {
+          navigate('/myArtCraft');
           Swal.fire({
             title: 'Success!',
             text: 'Updated Craft Information',
@@ -156,6 +158,9 @@ function Update() {
               <input
                 type="number"
                 name="price"
+                min="0"
+                max=""
+                step="0.01"
                 defaultValue={price}
                 required
                 placeholder="Enter Price"
@@ -175,6 +180,9 @@ function Update() {
                 type="number"
                 defaultValue={rating}
                 name="rating"
+                min="0"
+                max="5"
+                step="0.01"
                 required
                 placeholder="Enter Rating"
                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"

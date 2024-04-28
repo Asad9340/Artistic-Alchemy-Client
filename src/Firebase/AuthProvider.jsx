@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
@@ -39,6 +40,16 @@ function AuthProvider({ children }) {
     setUser(null);
     return signInWithPopup(auth, githubProvider);
   };
+
+  //update user profile
+  const updateUserProfile = (name, profile) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: profile,
+    });
+  };
+
+
   //logOut
   const logOut = () => {
     signOut(auth).then(() => {
@@ -65,6 +76,7 @@ function AuthProvider({ children }) {
     loginUser,
     logOut,
     loading,
+    updateUserProfile,
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>

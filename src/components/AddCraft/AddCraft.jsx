@@ -112,7 +112,9 @@ function AddCraft() {
                 id=""
               >
                 <option value="Embroidery">Embroidery</option>
-                <option value="Knitting & Crocheting">Knitting & Crocheting</option>
+                <option value="Knitting & Crocheting">
+                  Knitting & Crocheting
+                </option>
                 <option value="Quilting">Quilting</option>
                 <option value="Beadwork">Beadwork</option>
                 <option value="Tie-Dyeing">Tie-Dyeing</option>
@@ -148,6 +150,9 @@ function AddCraft() {
               <input
                 type="number"
                 name="price"
+                min="0"
+                max=""
+                step="0.01"
                 required
                 placeholder="Enter Price"
                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -165,6 +170,9 @@ function AddCraft() {
               <input
                 type="number"
                 name="rating"
+                min="0"
+                max="5"
+                step="0.01"
                 required
                 placeholder="Enter Rating"
                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
