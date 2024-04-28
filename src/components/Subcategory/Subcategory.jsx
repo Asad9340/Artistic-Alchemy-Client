@@ -8,7 +8,7 @@ function Subcategory() {
   useEffect(() => {
     (async () => {
       const res = await fetch(
-        `http://artistic-alchemy-server.vercel.app/allArtCraft/${subcategory}`
+        `https://artistic-alchemy-server.vercel.app/allArtCraft/${subcategory}`
       );
       const data = await res.json();
       setSubcategoryCollection(data);
