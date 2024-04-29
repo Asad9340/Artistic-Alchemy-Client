@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { TbCoinTakaFilled } from 'react-icons/tb';
+import { FaStarHalfAlt } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
+import { MdOutlineAddShoppingCart } from 'react-icons/md';
+import { MdFavoriteBorder } from "react-icons/md";
 import {
   Card,
   CardHeader,
   CardBody,
   Typography,
+  Button,
 } from '@material-tailwind/react';
 
 function Details() {
@@ -31,7 +37,6 @@ function Details() {
     processing_time,
     stock_status,
   } = product;
-  console.log(product);
   return (
     <div className="max-w-5xl mx-auto">
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold lg:font-bold text-center my-8 md:my-10 lg:my-12  font-fontPrimary">
@@ -74,20 +79,28 @@ function Details() {
               color="gray"
               className="mb-2 font-normal font-fontPrimary"
             >
-              Description: {description}
+              <span className="font-semibold">Description:</span> {description}
             </Typography>
-            <div className="flex gap-4 flex-row lg:flex-col justify-between mb-4">
+            <div className="flex gap-4 flex-col lg:flex-row justify-between mb-4">
               <Typography
                 color="gray"
-                className=" font-normal font-fontPrimary"
+                className=" font-fontPrimary text-2xl font-bold flex items-center gap-1"
               >
-                Price: {price}
+                <span className="text-base font-semibold">Price:</span>{' '}
+                <TbCoinTakaFilled /> {price}{' '}
+                <span className="text-lg">Taka</span>
               </Typography>
               <Typography
                 color="gray"
-                className=" font-normal font-fontPrimary"
+                className=" font-fontPrimary font-semibold flex items-center gap-1"
               >
-                Rating: {rating}
+                <span className="text-base font-semibold">Rating:</span>{' '}
+                <FaStar className="text-yellow-900" />{' '}
+                <FaStar className="text-yellow-900" />{' '}
+                <FaStar className="text-yellow-900" />{' '}
+                <FaStar className="text-yellow-900" />{' '}
+                <FaStarHalfAlt className="text-yellow-900" />
+                {rating}
               </Typography>
             </div>
             <div className="flex gap-4 flex-row lg:flex-col justify-between">
@@ -95,18 +108,36 @@ function Details() {
                 color="gray"
                 className=" font-normal font-fontPrimary"
               >
-                Processing Status: {processing_time}
+                <span className="text-base font-semibold">
+                  Processing Status:
+                </span>{' '}
+                {processing_time}
               </Typography>
               <Typography
                 color="gray"
                 className=" font-normal font-fontPrimary"
               >
-                Stock: {stock_status}
+                <span className="text-base font-semibold">Stock Status:</span>{' '}
+                {stock_status}
               </Typography>
             </div>
             <Typography color="gray" className=" font-normal font-fontPrimary">
-              Customization: {customization}
+              <span className="text-base font-semibold">
+                <span className="text-base font-semibold">Customization:</span>
+              </span>{' '}
+              {customization}
             </Typography>
+            <div className="mt-2 md:mt-4 flex gap-3 md:gap-6 flex-col md:flex-row ">
+              <Button className="bg-green-600 flex items-center gap-2 w-full justify-center">
+                <MdOutlineAddShoppingCart className="text-2xl" /> Add to Card
+              </Button>
+              <Button
+                variant="outlined"
+                className="text-black flex items-center gap-2 justify-center w-full"
+              >
+                <MdFavoriteBorder className="text-2xl" /> Add Wishlist
+              </Button>
+            </div>
           </CardBody>
         </Card>
       </div>

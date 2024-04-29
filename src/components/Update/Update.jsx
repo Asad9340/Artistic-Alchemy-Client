@@ -185,7 +185,7 @@ function Update() {
                 name="rating"
                 min="0"
                 max="5"
-                step="0.01"
+                step="0.1"
                 required
                 placeholder="Enter Rating"
                 className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"

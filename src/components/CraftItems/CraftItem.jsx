@@ -1,6 +1,6 @@
 import { FaStarHalfAlt } from 'react-icons/fa';
-import { TbCoinTakaFilled } from 'react-icons/tb';
 import { FaStar } from 'react-icons/fa';
+import { TbCoinTakaFilled } from 'react-icons/tb';
 import { Button } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
 import { Fade } from 'react-awesome-reveal';
@@ -58,7 +58,7 @@ function CraftItem({ craft }) {
           </p>
           <p className="flex gap-1 items-center text-2xl font-bold">
             <span className="font-semibold text-lg"> Price:</span> <TbCoinTakaFilled />{' '}
-            {price} <span className='text-lg font-semibold'>Taka</span>
+            {price} <span className='text-lg font-semibold ml-1'>Taka</span>
           </p>
           <p>
             <span className="font-semibold"> Processing Time:</span>{' '}

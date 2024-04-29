@@ -124,7 +124,7 @@ function MyArtCraft() {
           >
             Filter By
           </label>
-          <Select label="Select Version">
+          <Select label="Select Filter Option">
             <Option onClick={handleAllFilter}>All</Option>
             <Option onClick={handleYesFilter}>Yes</Option>
             <Option onClick={handleNoFilter}>No</Option>
