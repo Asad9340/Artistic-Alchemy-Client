@@ -4,7 +4,7 @@ function Category({ category }) {
   const { image, subcategory_name, description } = category;
   return (
     <Link to={`/subcategory/${subcategory_name}`}>
-      <div className="space-y-3 my-4 border p-3 md:p-4 rounded-lg hover:scale-105 duration-200">
+      <div className="space-y-3 my-4 border p-3 md:p-4 rounded-lg hover:scale-105 duration-200 hover:bg-gray-200 cursor-pointer">
         <div>
           <img className="w-full h-[200px] rounded-lg " src={image} alt="" />
         </div>

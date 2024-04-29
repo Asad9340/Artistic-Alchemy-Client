@@ -74,12 +74,24 @@ function MyArtCraft() {
   };
 
   const handleYesFilter = () => {
-    const yesFilter = myCrafts.find(craft => craft.customization === 'Yes');
-    setMyCrafts(yesFilter);
+    (async () => {
+      const value='Yes'
+      const res = await fetch(
+        `https://artistic-alchemy-server.vercel.app/allArtCraft/sort/${user.email}/${value}`
+      );
+      const data =await res.json();
+      setMyCrafts(data);
+    })()
   };
   const handleNoFilter = () => {
-    const noFilter = myCrafts.find(craft => craft.customization === 'No');
-    setMyCrafts(noFilter);
+     (async () => {
+       const value = 'No';
+       const res = await fetch(
+         `https://artistic-alchemy-server.vercel.app/allArtCraft/sort/${user.email}/${value}`
+       );
+       const data = await res.json();
+       setMyCrafts(data);
+     })();
   };
 
 
