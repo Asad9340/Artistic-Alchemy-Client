@@ -45,7 +45,7 @@ function CraftItem({ craft }) {
             <span className="font-semibold">Product Name:</span> {item_name}
           </p>
           <p>
-            <span className="font-semibold">Description:</span> {description}
+            <span className="font-semibold">Description:</span> {description.length>55?description.substring(0,55)+"...":description}
           </p>
           <p className="flex items-center gap-1">
             <span className="font-semibold">Rating:</span>{' '}
@@ -56,9 +56,9 @@ function CraftItem({ craft }) {
             <FaStarHalfAlt className="text-yellow-900" />
             {rating}
           </p>
-          <p className="flex gap-1 items-center">
-            <span className="font-semibold"> Price:</span> <TbCoinTakaFilled />{' '}
-            {price} taka
+          <p className="flex gap-1 items-center text-2xl font-bold">
+            <span className="font-semibold text-lg"> Price:</span> <TbCoinTakaFilled />{' '}
+            {price} <span className='text-lg font-semibold'>Taka</span>
           </p>
           <p>
             <span className="font-semibold"> Processing Time:</span>{' '}

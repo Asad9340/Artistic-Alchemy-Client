@@ -235,7 +235,7 @@ function AddCraft() {
                 id=""
               >
                 <option value="In Stock">In stock</option>
-                <option value="made To Order">Made to Order</option>
+                <option value="Made To Order">Made to Order</option>
               </select>
             </div>
           </div>
