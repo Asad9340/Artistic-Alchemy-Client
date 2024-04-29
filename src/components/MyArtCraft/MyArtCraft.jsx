@@ -3,6 +3,7 @@ import { AuthContext } from '../../Firebase/AuthProvider';
 import Item from '../CraftItems/Item';
 import Loader from '../Spinner/Loader';
 import Swal from 'sweetalert2';
+import { Option, Select } from '@material-tailwind/react';
 
 function MyArtCraft() {
   const { user } = useContext(AuthContext);
@@ -74,16 +75,19 @@ function MyArtCraft() {
   };
 
   const handleAllFilter = () => {
+    setLoading(true);
        (async () => {
          const res = await fetch(
            `https://artistic-alchemy-server.vercel.app/myCraft/${user.email}`
          );
          const data = await res.json();
          setMyCrafts(data);
+         setLoading(false);
        })();
   };
 
   const handleYesFilter = () => {
+    setLoading(true);
     (async () => {
       const value = 'Yes';
       const res = await fetch(
@@ -91,9 +95,11 @@ function MyArtCraft() {
       );
       const data = await res.json();
       setMyCrafts(data);
+      setLoading(false);
     })();
   };
   const handleNoFilter = () => {
+    setLoading(true);
     (async () => {
       const value = 'No';
       const res = await fetch(
@@ -101,6 +107,7 @@ function MyArtCraft() {
       );
       const data = await res.json();
       setMyCrafts(data);
+      setLoading(false);
     })();
   };
 
@@ -110,44 +117,18 @@ function MyArtCraft() {
         My Art & Crafts
       </h2>
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 mt-6 md:mt-8">
-        <div className="">
-          <div className="relative">
-            <button
-              data-ripple-light="true"
-              data-popover-target="menu"
-              className="select-none rounded-lg bg-gray-900 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            >
-              Customization
-            </button>
-            <ul
-              role="menu"
-              data-popover="menu"
-              data-popover-placement="bottom"
-              className="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
-            >
-              <li
-                onClick={handleAllFilter}
-                role="menuitem"
-                className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
-              >
-                All
-              </li>
-              <li
-                onClick={handleYesFilter}
-                role="menuitem"
-                className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
-              >
-                Yes
-              </li>
-              <li
-                onClick={handleNoFilter}
-                role="menuitem"
-                className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
-              >
-                No
-              </li>
-            </ul>
-          </div>
+        <div className="w-full">
+          <label
+            className="  block  text-blueGray-600 text-lg font-bold mb-2"
+            htmlFor="grid-password"
+          >
+            Filter By
+          </label>
+          <Select label="Select Version">
+            <Option onClick={handleAllFilter}>All</Option>
+            <Option onClick={handleYesFilter}>Yes</Option>
+            <Option onClick={handleNoFilter}>No</Option>
+          </Select>
         </div>
         <div className="relative w-full mb-3">
           <label

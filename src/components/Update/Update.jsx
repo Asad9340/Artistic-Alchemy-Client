@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Firebase/AuthProvider';
 
 function Update() {
+  const {user}=useContext(AuthContext)
   const navigate = useNavigate();
   const product = useLoaderData();
   const {
@@ -243,6 +246,40 @@ function Update() {
                 <option value="In Stock">In stock</option>
                 <option value="made To Order">Made to Order</option>
               </select>
+            </div>
+          </div>
+          <div className="w-full lg:w-6/12 px-4">
+            <div className="relative w-full mb-3">
+              <label
+                className="  block  text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="grid-password"
+              >
+                User Name
+              </label>
+              <input
+                type="text"
+                required
+                disabled
+                defaultValue={user.displayName}
+                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              />
+            </div>
+          </div>
+          <div className="w-full lg:w-6/12 px-4">
+            <div className="relative w-full mb-3">
+              <label
+                className="  block  text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="grid-password"
+              >
+                Email
+              </label>
+              <input
+                type="text"
+                disabled
+                required
+                defaultValue={user.email}
+                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              />
             </div>
           </div>
           <div className="w-full px-4">
