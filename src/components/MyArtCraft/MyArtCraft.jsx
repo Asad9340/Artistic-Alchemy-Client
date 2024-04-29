@@ -73,28 +73,36 @@ function MyArtCraft() {
     }
   };
 
+  const handleAllFilter = () => {
+       (async () => {
+         const res = await fetch(
+           `https://artistic-alchemy-server.vercel.app/myCraft/${user.email}`
+         );
+         const data = await res.json();
+         setMyCrafts(data);
+       })();
+  };
+
   const handleYesFilter = () => {
     (async () => {
-      const value='Yes'
+      const value = 'Yes';
       const res = await fetch(
         `https://artistic-alchemy-server.vercel.app/allArtCraft/sort/${user.email}/${value}`
       );
-      const data =await res.json();
+      const data = await res.json();
       setMyCrafts(data);
-    })()
+    })();
   };
   const handleNoFilter = () => {
-     (async () => {
-       const value = 'No';
-       const res = await fetch(
-         `https://artistic-alchemy-server.vercel.app/allArtCraft/sort/${user.email}/${value}`
-       );
-       const data = await res.json();
-       setMyCrafts(data);
-     })();
+    (async () => {
+      const value = 'No';
+      const res = await fetch(
+        `https://artistic-alchemy-server.vercel.app/allArtCraft/sort/${user.email}/${value}`
+      );
+      const data = await res.json();
+      setMyCrafts(data);
+    })();
   };
-
-
 
   return (
     <div className="mt-6 md:mt-10 lg:mt-12 font-fontPrimary">
@@ -117,6 +125,13 @@ function MyArtCraft() {
               data-popover-placement="bottom"
               className="absolute z-10 min-w-[180px] overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none"
             >
+              <li
+                onClick={handleAllFilter}
+                role="menuitem"
+                className="block w-full cursor-pointer select-none rounded-md px-3 pt-[9px] pb-2 text-start leading-tight transition-all hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+              >
+                All
+              </li>
               <li
                 onClick={handleYesFilter}
                 role="menuitem"
