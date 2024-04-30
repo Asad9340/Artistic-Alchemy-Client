@@ -42,7 +42,7 @@ function SupportService() {
             </Button>
           </div>
         </div>
-        <div className="border p-4 md:p-5 rounded-md  space-y-2">
+        <div className="border p-4 md:p-5 rounded-md  space-y-2 flex flex-col justify-between items-center">
           <div className="text-center">
             <div className="inline-block p-4 rounded-lg bg-[#4C4452]">
               <AiFillLike className="text-white text-3xl" />

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import CraftItem from './CraftItem';
+import Loader from '../Spinner/Loader';
 
 function CraftItems() {
   const [crafts, setCrafts] = useState([]);
@@ -20,8 +21,11 @@ function CraftItems() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {
-          crafts.map(craft =><CraftItem key={craft._id} craft={craft} />)
-        }
+          crafts?
+          crafts.map(craft => (
+          <CraftItem key={craft._id} craft={craft} />
+          )):<Loader/>
+      }
       </div>
     </div>
   );

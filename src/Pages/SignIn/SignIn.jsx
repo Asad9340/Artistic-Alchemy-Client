@@ -52,12 +52,16 @@ export function SignIn() {
       });
   };
   return (
-    <div>
+    <div className=" font-fontPrimary">
       <section className="grid text-center  items-center p-8">
-        <Typography variant="h3" color="blue-gray" className="mb-2">
+        <Typography
+          variant="h3"
+          color="black"
+          className="mb-2  font-fontPrimary"
+        >
           Sign In
         </Typography>
-        <Typography className="mb-6 text-gray-600 font-normal text-[18px]">
+        <Typography className="mb-6 text-black font-normal text-[18px] font-fontPrimary">
           Enter your email and password to sign in
         </Typography>
         <form
@@ -68,7 +72,7 @@ export function SignIn() {
             <label htmlFor="email">
               <Typography
                 variant="small"
-                className="mb-2 block font-medium text-gray-900"
+                className="mb-2 block font-medium text-black  font-fontPrimary"
               >
                 Your Email
               </Typography>
@@ -80,14 +84,14 @@ export function SignIn() {
               type="email"
               name="email"
               label="Email"
-              className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200"
+              className="w-full placeholder:opacity-100 focus:border-t-primary border-t-blue-gray-200  font-fontPrimary"
             />
           </div>
           <div className="mb-3">
             <label htmlFor="password">
               <Typography
                 variant="small"
-                className="mb-2 block font-medium text-gray-900"
+                className="mb-2 block font-medium text-black  font-fontPrimary"
               >
                 Password
               </Typography>
@@ -116,7 +120,7 @@ export function SignIn() {
             type="submit"
             color="gray"
             size="lg"
-            className="mt-4"
+            className="mt-4  font-fontPrimary"
             fullWidth
           >
             sign in
@@ -126,30 +130,30 @@ export function SignIn() {
               onClick={handleGoogleLogin}
               variant="outlined"
               size="md"
-              className="mt-4 flex  items-center justify-center gap-2"
+              className="mt-4 flex  items-center justify-center gap-2 text-black  font-fontPrimary"
               fullWidth
             >
-              <FaGoogle className="text-lg" />
+              <FaGoogle className="text-lg text-black" />
               google
             </Button>
             <Button
               onClick={handleGithubLogin}
               variant="outlined"
               size="md"
-              className="mt-4 flex  items-center justify-center gap-2"
+              className="mt-4 flex  items-center justify-center gap-2 font-fontPrimary text-black"
               fullWidth
             >
-              <FaGithub className="text-lg" />
+              <FaGithub className="text-lg text-black" />
               Github
             </Button>
           </div>
           <Typography
             variant="small"
             color="gray"
-            className="mt-4 text-center font-normal"
+            className="mt-4 text-center font-normal font-fontPrimary text-black"
           >
             Not registered?{' '}
-            <Link to="/signup" className="font-medium text-gray-900">
+            <Link to="/signup" className="font-medium text-black">
               Create account
             </Link>
           </Typography>

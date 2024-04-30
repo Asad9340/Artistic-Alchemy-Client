@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Category from "./Category";
+import Loader from "../Spinner/Loader";
 
 function Categories() {
   const [categories, setCategories] = useState([]);
@@ -15,7 +16,9 @@ function Categories() {
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold md:font-bold text-center">Categories</h2>
       <div className="grid gap-3 grid-cols-1 md:grid-cols-3 mt-6 md:mt-8">
         {
-          categories.map(category=><Category key={category._id} category={category} />)
+          categories?
+            categories.map(category => <Category key={category._id} category={category} />) :
+            <Loader/>
       }
       </div>
     </div>

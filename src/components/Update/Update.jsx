@@ -124,7 +124,9 @@ function Update() {
                 defaultValue={subcategory_name}
               >
                 <option value="Embroidery">Embroidery</option>
-                <option value="Knitting">Knitting & Crocheting</option>
+                <option value="Knitting & Crocheting">
+                  Knitting & Crocheting
+                </option>
                 <option value="Quilting">Quilting</option>
                 <option value="Beadwork">Beadwork</option>
                 <option value="Tie-Dyeing">Tie-Dyeing</option>
@@ -244,7 +246,7 @@ function Update() {
                 defaultValue={stock_status}
               >
                 <option value="In Stock">In stock</option>
-                <option value="made To Order">Made to Order</option>
+                <option value="Made To Order">Made to Order</option>
               </select>
             </div>
           </div>
