@@ -122,7 +122,7 @@ function MyArtCraft() {
             className="  block  text-blueGray-600 text-lg font-bold mb-2"
             htmlFor="grid-password"
           >
-            Filter By
+            Filter By Customization
           </label>
           <Select label="Select Filter Option">
             <Option onClick={handleAllFilter}>All</Option>

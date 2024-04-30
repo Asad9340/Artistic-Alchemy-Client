@@ -34,33 +34,25 @@ function Footer() {
             </div>
             <div className="space-y-3">
               <h3 className="tracking-wide uppercase dark:text-gray-900 font-semibold">
-                Company
+                Location
               </h3>
               <ul className="space-y-1">
                 <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Privacy
-                  </a>
+                  Santikunjo, Tangail
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Terms of Service
-                  </a>
+                  Bangladesh
                 </li>
               </ul>
             </div>
             <div className="space-y-3">
-              <h3 className="uppercase dark:text-gray-900 font-semibold">Developers</h3>
+              <h3 className="uppercase dark:text-gray-900 font-semibold">Contact Us</h3>
               <ul className="space-y-1">
                 <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Public API
-                  </a>
+                  asadul@gmail.com
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#">
-                    Guides
-                  </a>
+                  01770070538
                 </li>
               </ul>
             </div>
