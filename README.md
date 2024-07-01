@@ -38,7 +38,7 @@ This project fulfills the requirements of the "B9 A10 Type-02" category.
 
 To get started with Artistic Alchemy, follow these steps:
 
-1. Clone this repository.
+1. Clone this repository. `git clone https://github.com/Asad9340/Artistic-Alchemy-Client.git`
 2. Install dependencies using `npm install`.
 3. Run the development server using `npm run dev`.
 
